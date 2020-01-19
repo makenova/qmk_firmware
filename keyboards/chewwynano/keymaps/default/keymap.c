@@ -49,11 +49,11 @@ enum custom_keycodes {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [0] = LAYOUT(
         KC_P3, KC_P4, KC_P5, KC_P6,
-        KC_P2, KC_P0, KC_P1, KC_RCTL
+        KC_P2, KC_P0, KC_P1, MO(1)
     ),
     [1] = LAYOUT(
-        KC_3, KC_4, KC_5, KC_6,
-        KC_7, KC_8, KC_9, KC_0
+        KC_F16, KC_F17, KC_F18, KC_F19,
+        KC_F15, KC_F13, KC_F14, KC_TRNS
     )
 };
 
