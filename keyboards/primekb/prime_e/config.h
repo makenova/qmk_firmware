@@ -44,3 +44,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #define DYNAMIC_KEYMAP_LAYER_COUNT 8
 #define TAPPING_TERM 200
+
+#define LSPO_KEYS KC_LSFT, KC_LSFT, KC_LBRC
+#define RSPC_KEYS KC_RSFT, KC_RSFT, KC_RBRC
+#define LCPO_KEYS KC_LSFT, KC_TRNS, KC_LBRC
+#define RCPC_KEYS KC_LSFT, KC_TRNS, KC_LBRC
