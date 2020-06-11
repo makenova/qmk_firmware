@@ -48,4 +48,4 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define LSPO_KEYS KC_LSFT, KC_LSFT, KC_LBRC
 #define RSPC_KEYS KC_RSFT, KC_RSFT, KC_RBRC
 #define LCPO_KEYS KC_LCTL, KC_TRNS, KC_LBRC
-#define RCPC_KEYS KC_LCTL, KC_TRNS, KC_RBRC
+#define RCPC_KEYS KC_RCTL, KC_TRNS, KC_RBRC
