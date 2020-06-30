@@ -24,10 +24,8 @@ enum {
 qk_tap_dance_action_t tap_dance_actions[] = {
   [TD_SEMI_QUOTE]  = ACTION_TAP_DANCE_DOUBLE(KC_SCLN, KC_QUOT),
   [TD_DOT_ENTER]  = ACTION_TAP_DANCE_DOUBLE(KC_PDOT, KC_PENT)
-// Other declarations would go here, separated by commas, if you have them
 };
 
-// Defines the keycodes used by our macros in process_record_user
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     LAYOUT(
     KC_P7, KC_P8, KC_P9, MT(MOD_LCTL, KC_GRV), KC_ESC, KC_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I, KC_O, KC_P, KC_DEL, KC_BSPC,
