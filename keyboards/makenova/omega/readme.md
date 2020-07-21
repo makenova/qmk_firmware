@@ -1,12 +1,16 @@
 # omega
 
-![omega](imgur.com image replace me!)
+### KLE
+![KLE](https://i.imgur.com/XVDH9ax.png)
+
+### Build
+![omega](https://i.imgur.com/sLEoCWc.jpg)
 
 A short description of the keyboard/project
 
 * Keyboard Maintainer: [makenova](https://github.com/yourusername)
-* Hardware Supported: The PCBs, controllers supported
-* Hardware Availability: Links to where you can find this hardware
+* Hardware Supported: A hotswap PCB and a solderable PCB
+* Hardware Availability: [omega repo](https://github.com/makenova/omega)
 
 Make example for this keyboard (after setting up your build environment):
 
