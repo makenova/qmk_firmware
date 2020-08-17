@@ -68,7 +68,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define NO_ACTION_MACRO
 #define NO_ACTION_FUNCTION
 
-#define TAPPING_TERM 200
+#define TAPPING_TERM 175
+#define COMBO_TERM 250
 
 #define LSPO_KEYS KC_LSFT, KC_LSFT, KC_LBRC
 #define RSPC_KEYS KC_RSFT, KC_RSFT, KC_RBRC
@@ -76,3 +77,5 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define RCPC_KEYS KC_RCTL, KC_TRNS, KC_RBRC
 #define LAPO_KEYS KC_LALT, KC_TRNS, KC_LBRC
 #define RAPC_KEYS KC_RALT, KC_TRNS, KC_RBRC
+
+#define COMBO_COUNT 6
