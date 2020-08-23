@@ -33,7 +33,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 
 #ifdef COMBO_ENABLE
-const uint16_t PROGMEM combo_bspc[] = {KC_O, KC_P, COMBO_END};
+const uint16_t PROGMEM combo_bspc[] = {KC_J, KC_K, COMBO_END};
 const uint16_t PROGMEM combo_numbak[] = {KC_0, KC_9, COMBO_END};
 const uint16_t PROGMEM combo_tilde[] = {KC_1, KC_2, COMBO_END};
 const uint16_t PROGMEM combo_tab[] = {KC_W, KC_E, COMBO_END};
