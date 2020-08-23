@@ -2,7 +2,8 @@
 
 #ifdef COMBO_ENABLE
 #    define COMBO_COUNT 7
-#    define COMBO_TERM 175
+#    define COMBO_TERM 50
 #endif
 
+#define TAPPING_TERM 150
 #define IGNORE_MOD_TAP_INTERRUPT
