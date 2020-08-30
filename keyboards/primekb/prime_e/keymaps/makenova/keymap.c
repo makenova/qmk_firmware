@@ -28,6 +28,20 @@ qk_tap_dance_action_t tap_dance_actions[] = {
 // In Layer declaration, add tap dance item in place of a key code
 // TD(TD_SEMI_QUOTE)
 
+#ifdef COMBO_ENABLE
+const uint16_t PROGMEM combo_bspc[] = {KC_J, KC_K, COMBO_END};
+const uint16_t PROGMEM combo_tab[] = {KC_W, KC_E, COMBO_END};
+const uint16_t PROGMEM combo_esc[] = {KC_Q, KC_W, COMBO_END};
+const uint16_t PROGMEM combo_ent[] = {KC_G, KC_H, COMBO_END};
+
+combo_t key_combos[COMBO_COUNT] = {
+  COMBO(combo_bspc,KC_BSPC), // 1
+  COMBO(combo_tab,KC_TAB), // 2
+  COMBO(combo_esc,KC_ESC), // 3
+  COMBO(combo_ent,KC_ENT), // 4
+};
+#endif
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     LAYOUT(
     KC_ESC,   KC_Q,     KC_W,     KC_E,   KC_R,    KC_T,          KC_Y,   KC_U,     KC_I, KC_O,    KC_P,    KC_DEL, KC_BSPC,
@@ -37,9 +51,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     LAYOUT(
-    KC_GRV,    KC_TRNS,   KC_TRNS,   KC_TRNS,   KC_TRNS,    KC_TRNS,          KC_TRNS,   KC_TRNS,    KC_UP,     KC_TRNS,   KC_MUTE,   KC_VOLD,   KC_VOLU,
-    KC_CAPS,   KC_TRNS,   KC_TRNS,   KC_TRNS,   KC_TRNS,    KC_TRNS,          KC_TRNS,   KC_LEFT,    KC_DOWN,   KC_RIGHT,  KC_QUOT,   KC_BSLS,
-    KC_TRNS,   KC_TRNS,   KC_TRNS,   KC_TRNS,   KC_TRNS,    KC_TRNS,          KC_TRNS,   KC_TRNS,    KC_TRNS,   KC_TRNS,   KC_TRNS,   KC_TRNS,   KC_TRNS,
+    KC_GRV,    KC_1,      KC_2,      KC_3,      KC_4,       KC_5,             KC_6,      KC_7,     KC_8,    KC_9,    KC_0,   KC_MINS,   KC_EQL,
+    KC_CAPS,   KC_TRNS,   KC_TRNS,   KC_TRNS,   KC_TRNS,    KC_TRNS,          KC_LEFT,    KC_DOWN,   KC_UP, KC_RIGHT,  KC_QUOT,   KC_BSLS,
+    KC_TRNS,   KC_MINS,     KC_EQL,   KC_TRNS,   KC_TRNS,    KC_TRNS,          KC_TRNS,   KC_TRNS,    KC_TRNS,   KC_TRNS,   KC_TRNS,   KC_TRNS,   KC_TRNS,
     KC_TRNS,   KC_TRNS,                         KC_TRNS,    KC_TRNS,	        KC_TRNS,   KC_TRNS,                                     KC_TRNS,   KC_TRNS
     ),
 
@@ -68,51 +82,4 @@ void matrix_init_user(void) {
   // set ScrollLock LED to output and low
   setPinOutput(B3);
   writePinLow(B3);
-}
-
-void matrix_scan_user(void) {
-
-}
-
-
-void led_set_user(uint8_t usb_led) {
-  // if (IS_LED_ON(usb_led, USB_LED_NUM_LOCK)) {
-  //   writePinHigh(B2);
-  // } else {
-  //   writePinLow(B2);
-  // }
-  // if (IS_LED_ON(usb_led, USB_LED_CAPS_LOCK)) {
-  //   writePinHigh(B1);
-  // } else {
-  //   writePinLow(B1);
-  // }
-/*
-  if (IS_LED_ON(usb_led, USB_LED_SCROLL_LOCK)) {
-    writePinHigh(B3);
-  } else {
-    writePinLow(B3);
-  }*/
-
-}
-
-//function for layer indicator LED
-uint32_t layer_state_set_user(uint32_t state)
-{
-// if (layer_state_cmp(state, 1)) {
-//         writePinHigh(B3);
-//     } else {
-//         writePinLow(B3);
-//     }
-//     if (layer_state_cmp(state, 2)) {
-//         writePinHigh(B2);
-//     } else {
-//         writePinLow(B2);
-//     }
-//     if (layer_state_cmp(state, 3)) {
-//         writePinHigh(B1);
-//     } else {
-//         writePinLow(B1);
-//     }
-  
-  return state;
 }
