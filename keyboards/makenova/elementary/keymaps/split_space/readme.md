@@ -1,1 +1,1 @@
-# The default keymap for elementary
+# The split space keymap for elementary
