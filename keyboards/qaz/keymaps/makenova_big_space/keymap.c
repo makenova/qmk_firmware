@@ -1,15 +1,26 @@
 #include QMK_KEYBOARD_H
 
-enum {
-  TD_SEMI_QUOTE = 0,
-  // TD_A_TAB = 1,
-};
+#ifdef COMBO_ENABLE
+const uint16_t PROGMEM combo_bspc[] = {KC_J, KC_K, COMBO_END};
+const uint16_t PROGMEM combo_numdel[] = {KC_0, KC_9, COMBO_END};
+const uint16_t PROGMEM combo_tilde[] = {KC_1, KC_2, COMBO_END};
+const uint16_t PROGMEM combo_tab[] = {KC_W, KC_E, COMBO_END};
+const uint16_t PROGMEM combo_esc[] = {KC_Q, KC_W, COMBO_END};
+const uint16_t PROGMEM combo_del[] = {KC_MINS, KC_EQL, COMBO_END};
+const uint16_t PROGMEM combo_ent[] = {KC_G, KC_H, COMBO_END};
+const uint16_t PROGMEM combo_ent2[] = {KC_G, KC_LEFT, COMBO_END};
 
-// Tap Dance Definitions
-qk_tap_dance_action_t tap_dance_actions[] = {
-  [TD_SEMI_QUOTE]  = ACTION_TAP_DANCE_DOUBLE(KC_SCLN, KC_QUOT),
-  // [TD_A_TAB]  = ACTION_TAP_DANCE_DOUBLE(KC_A, KC_TAB),
+combo_t key_combos[COMBO_COUNT] = {
+  COMBO(combo_bspc,KC_BSPC), // 1
+  COMBO(combo_numdel,KC_DEL), // 2
+  COMBO(combo_tab,KC_TAB), // 3
+  COMBO(combo_esc,KC_ESC), // 4
+  COMBO(combo_del,KC_DEL), // 5
+  COMBO(combo_ent,KC_ENT), // 6
+  COMBO(combo_tilde,KC_GRV), // 7
+  COMBO(combo_ent2,KC_ENT), // 8
 };
+#endif
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   LAYOUT(
@@ -31,25 +42,3 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     RESET, KC_TRNS,      KC_POWER,        KC_TRNS, KC_TRNS
   )
 };
-
-#ifdef COMBO_ENABLE
-const uint16_t PROGMEM combo_bspc[] = {KC_J, KC_K, COMBO_END};
-const uint16_t PROGMEM combo_numbak[] = {KC_0, KC_9, COMBO_END};
-const uint16_t PROGMEM combo_tilde[] = {KC_1, KC_2, COMBO_END};
-const uint16_t PROGMEM combo_tab[] = {KC_W, KC_E, COMBO_END};
-const uint16_t PROGMEM combo_esc[] = {KC_Q, KC_W, COMBO_END};
-const uint16_t PROGMEM combo_del[] = {KC_MINS, KC_EQL, COMBO_END};
-const uint16_t PROGMEM combo_ent[] = {KC_G, KC_H, COMBO_END};
-const uint16_t PROGMEM combo_ent2[] = {KC_G, KC_LEFT, COMBO_END};
-
-combo_t key_combos[COMBO_COUNT] = {
-  COMBO(combo_bspc,KC_BSPC), // 1
-  COMBO(combo_numbak,KC_BSPC), // 2
-  COMBO(combo_tab,KC_TAB), // 3
-  COMBO(combo_esc,KC_ESC), // 4
-  COMBO(combo_del,KC_DEL), // 5
-  COMBO(combo_ent,KC_ENT), // 6
-  COMBO(combo_tilde,KC_GRV), // 7
-  COMBO(combo_ent2,KC_ENT), // 8
-};
-#endif
