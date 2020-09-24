@@ -47,6 +47,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 
 #ifdef COMBO_ENABLE
-#    define COMBO_COUNT 7
+#    define COMBO_COUNT 4
 #    define COMBO_TERM 50
 #endif

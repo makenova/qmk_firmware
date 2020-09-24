@@ -7,8 +7,7 @@ const uint16_t PROGMEM combo_tilde[] = {KC_1, KC_2, COMBO_END};
 const uint16_t PROGMEM combo_tab[] = {KC_W, KC_E, COMBO_END};
 const uint16_t PROGMEM combo_esc[] = {KC_Q, KC_W, COMBO_END};
 const uint16_t PROGMEM combo_del[] = {KC_MINS, KC_EQL, COMBO_END};
-const uint16_t PROGMEM combo_ent[] = {KC_G, KC_H, COMBO_END};
-const uint16_t PROGMEM combo_ent2[] = {KC_G, KC_LEFT, COMBO_END};
+const uint16_t PROGMEM combo_ent[] = {KC_D, KC_F, COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
   COMBO(combo_bspc,KC_BSPC), // 1
@@ -18,7 +17,6 @@ combo_t key_combos[COMBO_COUNT] = {
   COMBO(combo_del,KC_DEL), // 5
   COMBO(combo_ent,KC_ENT), // 6
   COMBO(combo_tilde,KC_GRV), // 7
-  COMBO(combo_ent2,KC_ENT), // 8
 };
 #endif
 
