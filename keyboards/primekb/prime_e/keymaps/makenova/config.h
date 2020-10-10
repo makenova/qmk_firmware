@@ -1,10 +1,5 @@
 #pragma once
 
-// #define LSPO_KEYS KC_LSFT, KC_LSFT, KC_LBRC
-// #define RSPC_KEYS KC_RSFT, KC_RSFT, KC_RBRC
-// #define LCPO_KEYS KC_LCTL, KC_TRNS, KC_LBRC
-// #define RCPC_KEYS KC_RCTL, KC_TRNS, KC_RBRC
-
 #ifdef COMBO_ENABLE
 #    define COMBO_COUNT 4
 #    define COMBO_TERM 50

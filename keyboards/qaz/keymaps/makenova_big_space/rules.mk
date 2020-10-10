@@ -1,3 +1,2 @@
 COMBO_ENABLE = yes
-# TAP_DANCE_ENABLE = yes
-# CTPC = yes
+BOOTLOADER = dfu # dfu for elitec mcu
