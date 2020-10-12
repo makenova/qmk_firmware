@@ -1,60 +1,45 @@
-/* Copyright 2020 makenova
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 2 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
 #include QMK_KEYBOARD_H
 
-enum {
-  TD_SEMI_QUOTE = 0,
-  TD_A_TAB = 1,
-  TD_Q_ESC = 2,
-  TD_N_SPC = 3,
-  TD_P_BSPC = 4
-};
-
-// Tap Dance Definitions
-qk_tap_dance_action_t tap_dance_actions[] = {
-  [TD_SEMI_QUOTE]  = ACTION_TAP_DANCE_DOUBLE(KC_SCLN, KC_QUOT),
-  [TD_A_TAB]  = ACTION_TAP_DANCE_DOUBLE(KC_A, KC_TAB),
-  [TD_Q_ESC]  = ACTION_TAP_DANCE_DOUBLE(KC_Q, KC_ESC),
-  [TD_N_SPC]  = ACTION_TAP_DANCE_DOUBLE(KC_N, KC_SPC),
-  [TD_P_BSPC]  = ACTION_TAP_DANCE_DOUBLE(KC_P, KC_BSPC)
-};
-
-// combos
-const uint16_t PROGMEM esc_combo[] = {KC_Q, KC_W, COMBO_END};
-const uint16_t PROGMEM bkspc_combo[] = {KC_J, KC_K, COMBO_END};
-const uint16_t PROGMEM tab_combo[] = {KC_W, KC_E, COMBO_END};
-const uint16_t PROGMEM grv_combo[] = {KC_1, KC_2, COMBO_END};
-const uint16_t PROGMEM enter_combo[] = {KC_G, KC_H, COMBO_END};
-const uint16_t PROGMEM dk_combo[] = {KC_D, KC_K, COMBO_END};
+#ifdef COMBO_ENABLE
+const uint16_t PROGMEM combo_bspc[] = {KC_J, KC_K, COMBO_END};
+const uint16_t PROGMEM combo_numdel[] = {KC_0, KC_9, COMBO_END};
+const uint16_t PROGMEM combo_tilde[] = {KC_1, KC_2, COMBO_END};
+const uint16_t PROGMEM combo_tab[] = {KC_W, KC_E, COMBO_END};
+const uint16_t PROGMEM combo_esc[] = {KC_Q, KC_W, COMBO_END};
+const uint16_t PROGMEM combo_del[] = {KC_MINS, KC_EQL, COMBO_END};
+const uint16_t PROGMEM combo_ent[] = {KC_D, KC_F, COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
-  COMBO(esc_combo, KC_ESC), // 1
-  COMBO(bkspc_combo, KC_BSPC), // 2
-  COMBO(tab_combo, KC_TAB), // 3
-  COMBO(grv_combo, KC_GRV), // 4
-  COMBO(enter_combo, KC_ENT), // 5
-  COMBO(dk_combo, KC_BSPC), // 6
+  COMBO(combo_bspc,KC_BSPC), // 1
+  COMBO(combo_numdel,KC_DEL), // 2
+  COMBO(combo_tab,KC_TAB), // 3
+  COMBO(combo_esc,KC_ESC), // 4
+  COMBO(combo_del,KC_DEL), // 5
+  COMBO(combo_ent,KC_ENT), // 6
+  COMBO(combo_tilde,KC_GRV), // 7
 };
+#endif
+
+// ctrl
+#define CTRL_A LCTL_T(KC_A)
+#define CTRL_SCLN RCTL_T(KC_SCLN)
+// alt
+#define ALT_S LALT_T(KC_S)
+#define ALT_L RALT_T(KC_L)
+// shift
+#define SFT_Z LSFT_T(KC_Z)
+#define SFT_SLSH RSFT_T(KC_SLSH)
+// layers
+#define OS_SHIFT OSM(MOD_RSFT)
+#define LT1_SPC LT(1,KC_SPC)
+#define LT2_ESC LT(2,KC_ESC)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     LAYOUT(
     KC_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I, KC_O, LT(2,KC_P),
-    LCTL_T(KC_A), LALT_T(KC_S), KC_D, KC_F, KC_G, KC_H, KC_J, KC_K, KC_L, KC_SCLN,
-    LSFT_T(KC_Z), KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_COMM, KC_DOT, RSFT_T(KC_SLSH),
-    KC_LALT, KC_LGUI, LT(1,KC_SPACE), KC_RGUI, KC_RCTL
+    CTRL_A, ALT_S, KC_D, KC_F, KC_G, KC_H, KC_J, KC_K, ALT_L, CTRL_SCLN,
+    SFT_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_COMM, KC_DOT, SFT_SLSH,
+    KC_LALT, KC_LGUI, LT1_SPC, LT2_ESC, OS_SHIFT
     ),
     LAYOUT(
     KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0,
@@ -64,8 +49,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
     LAYOUT(
     KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10,
-    KC_F10, KC_F11, KC_F12, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+    KC_F11, KC_F12, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-    RESET, KC_TRNS, KC_POWER, KC_TRNS, EEPROM_RESET
+    RESET, KC_TRNS, KC_POWER, KC_TRNS, KC_TRNS
     )
 };
