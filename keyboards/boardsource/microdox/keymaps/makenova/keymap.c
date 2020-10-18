@@ -30,17 +30,18 @@ combo_t key_combos[COMBO_COUNT] = {
 #define SFT_Z LSFT_T(KC_Z)
 #define SFT_SLSH RSFT_T(KC_SLSH)
 // layers
-#define OS_SHIFT OSM(MOD_RSFT)
+#define OS_SFT OSM(MOD_RSFT)
+#define OS_3 OSL(3)
 #define LT1_SPC LT(1,KC_SPC)
-#define LT2_SPC LT(2,KC_SPC)
-#define LT3_GRV LT(3,KC_GRV)
+#define LT2_ESC LT(2,KC_ESC)
+// #define LT3_GRV LT(3,KC_GRV)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_split_3x5_3(
     KC_Q,    KC_W,   KC_E,     KC_R,    KC_T,        KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,
     CTRL_A,  ALT_S,  KC_D,     KC_F,    KC_G,        KC_H,    KC_J,    KC_K,    ALT_L,   CTRL_SCLN,
     SFT_Z,   KC_X,   KC_C,     KC_V,    KC_B,        KC_N,    KC_M,    KC_COMM, KC_DOT,  SFT_SLSH,
-                     KC_LALT, KC_LGUI, LT2_SPC,      LT1_SPC, OS_SHIFT, LT3_GRV
+                     KC_LALT,  KC_LGUI, LT2_ESC,        LT1_SPC, OS_SFT,  OS_3
   ),
 
   [1] = LAYOUT_split_3x5_3(
