@@ -24,16 +24,31 @@ combo_t key_combos[COMBO_COUNT] = {
 };
 #endif
 
+// ctrl
+#define CTRL_TAB LCTL_T(KC_TAB)
+#define CTRL_A LCTL_T(KC_A)
+#define CTRL_SCLN RCTL_T(KC_SCLN)
+// alt
+#define ALT_S LALT_T(KC_S)
+#define ALT_L RALT_T(KC_L)
+// shift
+#define SFT_Z LSFT_T(KC_Z)
+#define SFT_SLSH RSFT_T(KC_SLSH)
+// layers
+#define OS_SHIFT OSM(MOD_RSFT)
+#define LT1_SPC LT(1,KC_SPC)
+#define LT2_SPC LT(2,KC_SPC)
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_split_3x6_3( \
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-       KC_ESC,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                         KC_Y,    KC_U,    KC_I,    KC_O,   KC_P,  KC_BSPC,\
+      KC_ESC,   KC_Q,   KC_W,    KC_E,    KC_R,    KC_T,                         KC_Y,    KC_U,    KC_I,     KC_O,   KC_P,      KC_BSPC,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-       LCTL_T(KC_TAB), KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                         KC_H,    KC_J,    KC_K,    KC_L, KC_SCLN, KC_ENT,\
+      CTRL_TAB, CTRL_A, ALT_S,   KC_D,    KC_F,    KC_G,                         KC_H,    KC_J,    KC_K,     ALT_L,  CTRL_SCLN, KC_ENT,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_LSFT,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, KC_RSFT,\
+      KC_LSFT,  SFT_Z,  KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M,    KC_COMM,  KC_DOT, SFT_SLSH,  KC_RSFT,\
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_LALT,   KC_LGUI,  LT(2,KC_SPC),     LT(1,KC_SPC),  KC_RCTL,  LT(3,KC_GRV) \
+                                          KC_LALT,   KC_LGUI,  LT2_SPC,     LT1_SPC,  OS_SHIFT,  LT(3,KC_GRV) \
                                       //`--------------------------'  `--------------------------'
 
   ),
