@@ -32,6 +32,7 @@ combo_t key_combos[COMBO_COUNT] = {
 // layers
 #define OS_SFT OSM(MOD_RSFT)
 #define OS_3 OSL(3)
+#define OS_4 OSL(4)
 #define LT1_SPC LT(1,KC_SPC)
 #define LT2_ESC LT(2,KC_ESC)
 // #define LT3_GRV LT(3,KC_GRV)
@@ -61,7 +62,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [3] = LAYOUT_split_3x5_3(
     KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,            KC_F6, KC_F7, KC_F8, KC_F9, KC_F10,
     KC_F11, KC_F12, KC_TRNS, KC_TRNS, KC_TRNS,        KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT, KC_TRNS,
-    RESET, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,        KC_F14, KC_F15, KC_VOLD, KC_VOLU,  KC_TRNS,
+    RESET, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,        KC_F14, KC_F15, KC_VOLD, KC_VOLU,  OS_4,
              RGB_TOG, RGB_MODE_FORWARD, KC_SLEP,      KC_TRNS,  KC_TRNS, KC_TRNS
+  ),
+
+  [4] = LAYOUT_split_3x5_3( \
+    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,\
+    KC_A,  KC_S,  KC_D,  KC_F,  KC_NO,                 KC_NO,  KC_J,  KC_K,  KC_L,  KC_SCLN,\
+    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                KC_NO, KC_NO, KC_NO, KC_NO, KC_TRNS,\
+                  KC_NO,   KC_NO,  KC_B,              KC_SPC,   KC_NO, KC_NO \
   )
 };
