@@ -31,17 +31,33 @@ combo_t key_combos[COMBO_COUNT] = {
 };
 #endif
 
+// ctrl
+#define CTRL_A LCTL_T(KC_A)
+#define CTRL_SCLN RCTL_T(KC_SCLN)
+#define CTRL_TAB MT(MOD_LCTL,KC_TAB)
+// alt
+#define ALT_S LALT_T(KC_S)
+#define ALT_L RALT_T(KC_L)
+// shift
+#define SFT_Z LSFT_T(KC_Z)
+#define SFT_DOT RSFT_T(KC_DOT)
+// layers
+// #define OS_SHIFT OSM(MOD_RSFT)
+// #define OS_3 OSL(3)
+#define LT1_SPC LT(1,KC_SPC)
+#define LT2_ESC LT(2,KC_ESC)
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [0] = LAYOUT(
     KC_ESC, KC_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I, KC_O, KC_P, KC_BSPC,
-    MT(MOD_LCTL,KC_TAB), KC_A, KC_S, KC_D, KC_F, KC_G, KC_H, KC_J, KC_K, KC_L, KC_SCLN,
-    KC_LSFT, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_COMM, RSFT_T(KC_DOT), LT(2,KC_SLSH),
-    KC_LCTL, KC_LALT, KC_LGUI, LT(1,KC_SPACE), KC_RGUI, KC_RCTL
+    CTRL_TAB, CTRL_A, ALT_S, KC_D, KC_F, KC_G, KC_H, KC_J, KC_K, ALT_L, CTRL_SCLN,
+    KC_LSFT, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_COMM, SFT_DOT, KC_SLSH,
+    KC_LCTL, KC_LALT, KC_LGUI, LT1_SPC, KC_RGUI, LT2_ESC
     ),
     [1] = LAYOUT(
-    KC_GRV, KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0, KC_DEL,
+    KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,  KC_9,     KC_0,   KC_DEL,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT, KC_QUOT,
-    KC_TRNS, KC_LBRC, KC_RBRC, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_BSLS, KC_MINS, KC_EQL, KC_TRNS,
+    KC_TRNS, KC_TRNS, KC_LBRC, KC_RBRC, KC_TRNS, KC_TRNS, KC_TRNS, KC_BSLS, KC_MINS, KC_EQL, KC_TRNS,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
     ),
     [2] = LAYOUT(
