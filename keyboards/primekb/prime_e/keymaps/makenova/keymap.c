@@ -15,18 +15,25 @@ combo_t key_combos[COMBO_COUNT] = {
 #endif
 
 // ctrl
-#define CTRL_TAB LCTL_T(KC_TAB)
+#define CTRL_A LCTL_T(KC_A)
+#define CTRL_SCLN RCTL_T(KC_SCLN)
+#define CTRL_TAB MT(MOD_LCTL,KC_TAB)
+// alt
+#define ALT_S LALT_T(KC_S)
+#define ALT_L RALT_T(KC_L)
 // layers
+#define OS_SHIFT OSM(MOD_RSFT)
+#define OS_3 OSL(3)
 #define LT1_SPC LT(1,KC_SPC)
-#define LT2_SPC LT(2,KC_SPC)
-#define LT3_B LT(3,KC_B)
+#define LT2_ESC LT(2,KC_ESC)
+// #define LT3_B LT(3,KC_B)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     LAYOUT(
     KC_ESC, KC_Q, KC_W, KC_E, KC_R, KC_T,                          KC_Y, KC_U, KC_I, KC_O, KC_P, KC_DEL, KC_BSPC,
-    CTRL_TAB, KC_A, KC_S, KC_D, KC_F, KC_G,                        KC_H, KC_J, KC_K, KC_L, KC_SCLN, KC_ENT,
-    KC_LSFT, KC_Z, KC_X, KC_C, KC_V, KC_B,                         LT3_B, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_RSFT,
-    KC_LCTL,  KC_LALT,  KC_LGUI, LT2_SPC,                          LT1_SPC, KC_RGUI,                   KC_RALT,  KC_RCTL
+    CTRL_TAB, CTRL_A, ALT_S, KC_D, KC_F, KC_G,                        KC_H, KC_J, KC_K, ALT_L, CTRL_SCLN, KC_ENT,
+    KC_LSFT, KC_Z, KC_X, KC_C, KC_V, KC_B,                         OS_SHIFT, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_RSFT,
+    KC_LCTL,  KC_LALT,  KC_LGUI, LT2_ESC,                          LT1_SPC, OS_3,                   KC_RALT,  KC_RCTL
     ),
 
     LAYOUT(
@@ -37,7 +44,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     LAYOUT(
-    KC_GRV,  KC_EXLM, KC_AT, KC_HASH, KC_DLR, KC_PERC,             KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_MINS, KC_EQL,
+    KC_GRV,  KC_EXLM, KC_AT, KC_HASH, KC_DLR, KC_PERC,             KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_UNDS, KC_PLUS,
     KC_CAPS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,          KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT, KC_DQUO,   KC_BSLS,
     KC_TRNS, KC_LCBR, KC_RCBR, KC_TRNS, KC_TRNS, KC_TRNS,          KC_TRNS, KC_TRNS, KC_PIPE, KC_UNDS, KC_PLUS, KC_TRNS, KC_TRNS,
     KC_TRNS, KC_TRNS,                   KC_TRNS, KC_TRNS,          KC_TRNS, KC_TRNS,                           KC_TRNS, KC_TRNS
@@ -52,13 +59,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 
 void matrix_init_user(void) {
-  // set CapsLock LED to output and low
   setPinOutput(B1);
   writePinLow(B1);
-  // set NumLock LED to output and low
   setPinOutput(B2);
   writePinLow(B2);
-  // set ScrollLock LED to output and low
   setPinOutput(B3);
   writePinLow(B3);
 }
