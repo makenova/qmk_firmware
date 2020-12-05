@@ -40,7 +40,7 @@ combo_t key_combos[COMBO_COUNT] = {
 #define ALT_L RALT_T(KC_L)
 // shift
 #define SFT_Z LSFT_T(KC_Z)
-#define SFT_DOT RSFT_T(KC_DOT)
+#define SFT_SLSH RSFT_T(KC_SLSH)
 // layers
 // #define OS_SHIFT OSM(MOD_RSFT)
 // #define OS_3 OSL(3)
@@ -49,10 +49,10 @@ combo_t key_combos[COMBO_COUNT] = {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [0] = LAYOUT(
-    KC_ESC, KC_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I, KC_O, KC_P, KC_BSPC,
-    CTRL_TAB, CTRL_A, ALT_S, KC_D, KC_F, KC_G, KC_H, KC_J, KC_K, ALT_L, CTRL_SCLN,
-    KC_LSFT, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_COMM, SFT_DOT, KC_SLSH,
-    KC_LCTL, KC_LALT, KC_LGUI, LT1_SPC, KC_RGUI, LT2_ESC
+    KC_ESC,   KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,   KC_Y, KC_U, KC_I,    KC_O,    KC_P,      KC_BSPC,
+    CTRL_TAB, CTRL_A,  ALT_S,   KC_D,    KC_F,    KC_G,   KC_H, KC_J, KC_K,    ALT_L,   CTRL_SCLN,
+    KC_LSFT,  KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,   KC_N, KC_M, KC_COMM, KC_DOT,  SFT_SLSH,
+    KC_LCTL,  KC_LALT, KC_LGUI, LT1_SPC, KC_RGUI, LT2_ESC
     ),
     [1] = LAYOUT(
     KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,  KC_9,     KC_0,   KC_DEL,
