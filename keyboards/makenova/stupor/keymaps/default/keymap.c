@@ -38,6 +38,9 @@ combo_t key_combos[COMBO_COUNT] = {
 // alt
 #define ALT_S LALT_T(KC_S)
 #define ALT_L RALT_T(KC_L)
+//gui
+#define GUI_G LGUI_T(KC_G)
+#define GUI_H RGUI_T(KC_H)
 // shift
 #define SFT_Z LSFT_T(KC_Z)
 #define SFT_SLSH RSFT_T(KC_SLSH)
@@ -49,9 +52,9 @@ combo_t key_combos[COMBO_COUNT] = {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [0] = LAYOUT(
-    KC_ESC,   KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,   KC_Y, KC_U, KC_I,    KC_O,    KC_P,      KC_BSPC,
-    CTRL_TAB, CTRL_A,  ALT_S,   KC_D,    KC_F,    KC_G,   KC_H, KC_J, KC_K,    ALT_L,   CTRL_SCLN,
-    KC_LSFT,  KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,   KC_N, KC_M, KC_COMM, KC_DOT,  SFT_SLSH,
+    KC_ESC,   KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,   KC_Y,  KC_U,  KC_I,    KC_O,    KC_P,      KC_BSPC,
+    CTRL_TAB, CTRL_A,  ALT_S,   KC_D,    KC_F,    GUI_G,  GUI_H, KC_J,  KC_K,    ALT_L,   CTRL_SCLN,
+    KC_LSFT,  KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,   KC_N,  KC_M,  KC_COMM, KC_DOT,  SFT_SLSH,
     KC_LCTL,  KC_LALT, KC_LGUI, LT1_SPC, KC_RGUI, LT2_ESC
     ),
     [1] = LAYOUT(
