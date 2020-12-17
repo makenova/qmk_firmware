@@ -1,21 +1,5 @@
 #include QMK_KEYBOARD_H
 
-#ifdef COMBO_ENABLE
-const uint16_t PROGMEM combo_bspc[] = {KC_U, KC_I, COMBO_END};
-const uint16_t PROGMEM combo_del[] = {KC_M, KC_COMM, COMBO_END};
-const uint16_t PROGMEM combo_tilde[] = {KC_1, KC_2, COMBO_END};
-const uint16_t PROGMEM combo_ent[] = {KC_E, KC_R, COMBO_END};
-const uint16_t PROGMEM combo_tab[] = {KC_C, KC_V, COMBO_END};
-
-combo_t key_combos[COMBO_COUNT] = {
-  COMBO(combo_bspc,KC_BSPC), // 1
-  COMBO(combo_del,KC_DEL), // 2
-  COMBO(combo_tilde,KC_GRV), // 3
-  COMBO(combo_ent,KC_ENT), // 4
-  COMBO(combo_tab,KC_TAB), // 5
-};
-#endif
-
 // ctrl
 #define CTRL_S LCTL_T(KC_S)
 #define CTRL_L RCTL_T(KC_L)
@@ -35,6 +19,22 @@ combo_t key_combos[COMBO_COUNT] = {
 #define LT1_SPC LT(1,KC_SPC)
 #define LT2_ESC LT(2,KC_ESC)
 // #define LT3_GRV LT(3,KC_GRV)
+
+#ifdef COMBO_ENABLE
+const uint16_t PROGMEM combo_bspc[] = {GUI_J, ALT_K, COMBO_END};
+const uint16_t PROGMEM combo_del[] = {KC_M, KC_COMM, COMBO_END};
+const uint16_t PROGMEM combo_ent[] = {GUI_F, ALT_D, COMBO_END};
+const uint16_t PROGMEM combo_tab[] = {KC_C, KC_V, COMBO_END};
+const uint16_t PROGMEM combo_tilde[] = {KC_1, KC_2, COMBO_END};
+
+combo_t key_combos[COMBO_COUNT] = {
+  COMBO(combo_bspc,KC_BSPC), // 1
+  COMBO(combo_del,KC_DEL), // 2
+  COMBO(combo_ent,KC_ENT), // 3
+  COMBO(combo_tab,KC_TAB), // 4
+  COMBO(combo_tilde,KC_GRV), // 5
+};
+#endif
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_split_3x5_3(
