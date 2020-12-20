@@ -18,21 +18,18 @@
 #define OS_4 OSL(4)
 #define LT1_SPC LT(1,KC_SPC)
 #define LT2_ESC LT(2,KC_ESC)
-// #define LT3_GRV LT(3,KC_GRV)
 
 #ifdef COMBO_ENABLE
 const uint16_t PROGMEM combo_bspc[] = {GUI_J, ALT_K, COMBO_END};
 const uint16_t PROGMEM combo_del[] = {KC_M, KC_COMM, COMBO_END};
 const uint16_t PROGMEM combo_ent[] = {GUI_F, ALT_D, COMBO_END};
 const uint16_t PROGMEM combo_tab[] = {KC_C, KC_V, COMBO_END};
-const uint16_t PROGMEM combo_tilde[] = {KC_1, KC_2, COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
   COMBO(combo_bspc,KC_BSPC), // 1
   COMBO(combo_del,KC_DEL), // 2
   COMBO(combo_ent,KC_ENT), // 3
   COMBO(combo_tab,KC_TAB), // 4
-  COMBO(combo_tilde,KC_GRV), // 5
 };
 #endif
 
@@ -47,14 +44,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [1] = LAYOUT_split_3x5_3(
     KC_1,    KC_2,    KC_3,    KC_4,    KC_5,         KC_6,    KC_7,    KC_8,    KC_9,    KC_0,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,      KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT, KC_QUOT,
-    KC_TRNS, KC_LBRC, KC_RBRC, KC_TRNS, KC_TRNS,      KC_TRNS, KC_BSLS, KC_MINS, KC_EQL,  KC_TRNS,
+    KC_GRV,  KC_LBRC, KC_RBRC, KC_TRNS, KC_TRNS,      KC_TRNS, KC_BSLS, KC_MINS, KC_EQL,  KC_TRNS,
                       KC_TRNS, KC_TRNS, KC_TRNS,      KC_TRNS, KC_TRNS, KC_TRNS
   ),
 
   [2] = LAYOUT_split_3x5_3(
     KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,      KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,      KC_HOME, KC_PGDN, KC_PGUP, KC_END, KC_DQUO,
-    KC_LCTL, KC_LCBR, KC_RCBR, KC_TRNS, KC_TRNS,      KC_TRNS, KC_PIPE, KC_UNDS, KC_PLUS,  KC_TRNS,
+    KC_TILDE, KC_LCBR, KC_RCBR, KC_TRNS, KC_TRNS,      KC_TRNS, KC_PIPE, KC_UNDS, KC_PLUS,  KC_TRNS,
                       KC_TRNS, KC_TRNS, KC_TRNS,      KC_TRNS, KC_TRNS, KC_TRNS
   ),
 
