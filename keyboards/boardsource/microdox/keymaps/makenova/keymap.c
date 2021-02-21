@@ -23,12 +23,16 @@ const uint16_t PROGMEM combo_bspc[] = {GUI_J, ALT_K, COMBO_END};
 const uint16_t PROGMEM combo_del[] = {KC_M, KC_COMM, COMBO_END};
 const uint16_t PROGMEM combo_ent[] = {GUI_F, ALT_D, COMBO_END};
 const uint16_t PROGMEM combo_tab[] = {KC_C, KC_V, COMBO_END};
+const uint16_t PROGMEM combo_ctrlR[] = {GUI_F, KC_R, COMBO_END};
+const uint16_t PROGMEM combo_ctrlV[] = {GUI_F, KC_V, COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
   COMBO(combo_bspc,KC_BSPC), // 1
   COMBO(combo_del,KC_DEL), // 2
   COMBO(combo_ent,KC_ENT), // 3
   COMBO(combo_tab,KC_TAB), // 4
+  COMBO(combo_ctrlR,LGUI(KC_R)), // 5
+  COMBO(combo_ctrlV,LGUI(KC_V)), // 6
 };
 #endif
 
