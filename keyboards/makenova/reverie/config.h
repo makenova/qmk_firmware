@@ -51,7 +51,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 /*
  * Split Keyboard specific options, make sure you have 'SPLIT_KEYBOARD = yes' in your rules.mk, and define SOFT_SERIAL_PIN.
  */
-#define SOFT_SERIAL_PIN D0  // or D1, D2, D3, E6
+// #define SOFT_SERIAL_PIN D0  // or D1, D2, D3, E6
 
 /* Debounce reduces chatter (unintended double-presses) - set 0 if debouncing is not needed */
 #define DEBOUNCE 5
@@ -68,11 +68,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define NO_ACTION_MACRO
 #define NO_ACTION_FUNCTION
 
-#define TAPPING_TERM 175
-
-#define LSPO_KEYS KC_LSFT, KC_LSFT, KC_LBRC
-#define RSPC_KEYS KC_RSFT, KC_RSFT, KC_RBRC
-#define LCPO_KEYS KC_LCTL, KC_TRNS, KC_LBRC
-#define RCPC_KEYS KC_RCTL, KC_TRNS, KC_RBRC
-#define LAPO_KEYS KC_LALT, KC_TRNS, KC_LBRC
-#define RAPC_KEYS KC_RALT, KC_TRNS, KC_RBRC
+/* Bootmagic Lite key configuration */
+#define BOOTMAGIC_LITE_ROW 0
+#define BOOTMAGIC_LITE_COLUMN 0
