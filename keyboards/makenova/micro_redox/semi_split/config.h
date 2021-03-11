@@ -20,15 +20,15 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "config_common.h"
 
 /* USB Device descriptor parameter */
-#define VENDOR_ID    0xFEED
-#define PRODUCT_ID   0x0000
+#define VENDOR_ID    0xAA88
+#define PRODUCT_ID   0x0102
 #define DEVICE_VER   0x0001
 #define MANUFACTURER makenova
 #define PRODUCT      micro_redox_semi_split
 
 /* key matrix size */
 #define MATRIX_ROWS 4
-#define MATRIX_COLS 11
+#define MATRIX_COLS 10
 
 #define MATRIX_ROW_PINS { D0, B7, B4, E6 }
 #define MATRIX_COL_PINS { D4, D5, D3, D2, D1, F0, F1, F4, F5,F6 }
