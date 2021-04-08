@@ -18,6 +18,10 @@
 // ctrl
 #define CTRL_S LCTL_T(KC_S)
 #define CTRL_L RCTL_T(KC_L)
+#define C_LEFT C(KC_LEFT)
+#define C_RIGHT C(KC_RIGHT)
+#define C_DOWN C(KC_DOWN)
+#define C_UP C(KC_UP)
 // alt
 #define ALT_D LALT_T(KC_D)
 #define ALT_K RALT_T(KC_K)
@@ -28,8 +32,9 @@
 #define SFT_A LSFT_T(KC_A)
 #define SFT_SCLN RSFT_T(KC_SCLN)
 // layers
-#define OS_SFT OSM(MOD_RSFT)
+// #define OS_SFT OSM(MOD_RSFT)
 #define OS_3 OSL(3)
+#define OS_4 OSL(4)
 #define LT1_SPC LT(1,KC_SPC)
 #define LT2_ESC LT(2,KC_ESC)
 
@@ -38,16 +43,16 @@ const uint16_t PROGMEM combo_bspc[] = {GUI_J, ALT_K, COMBO_END};
 const uint16_t PROGMEM combo_del[] = {KC_M, KC_COMM, COMBO_END};
 const uint16_t PROGMEM combo_ent[] = {GUI_F, ALT_D, COMBO_END};
 const uint16_t PROGMEM combo_tab[] = {KC_C, KC_V, COMBO_END};
-const uint16_t PROGMEM combo_ctrlR[] = {GUI_F, KC_R, COMBO_END};
-const uint16_t PROGMEM combo_ctrlV[] = {GUI_F, KC_V, COMBO_END};
+const uint16_t PROGMEM combo_guiR[] = {GUI_F, KC_DLR, COMBO_END};
+const uint16_t PROGMEM combo_guiV[] = {GUI_F, KC_V, COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
   COMBO(combo_bspc,KC_BSPC), // 1
   COMBO(combo_del,KC_DEL), // 2
   COMBO(combo_ent,KC_ENT), // 3
   COMBO(combo_tab,KC_TAB), // 4
-  COMBO(combo_ctrlR,LGUI(KC_R)), // 5
-  COMBO(combo_ctrlV,LGUI(KC_V)), // 6
+  COMBO(combo_guiR,LGUI(KC_R)), // 5
+  COMBO(combo_guiV,LGUI(KC_V)), // 6
 };
 #endif
 
@@ -56,7 +61,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_Q,  KC_W,    KC_E,   KC_R,   KC_T,       KC_Y,    KC_U,  KC_I,    KC_O,   KC_P,
     SFT_A, CTRL_S,  ALT_D,  GUI_F,  KC_G,       KC_H,    GUI_J, ALT_K,   CTRL_L, SFT_SCLN,
     KC_Z,  KC_X,    KC_C,   KC_V,   KC_B,       KC_N,    KC_M,  KC_COMM, KC_DOT, KC_SLSH,
-                        KC_LGUI, LT2_ESC,       LT1_SPC, OS_3
+                            OS_4,   LT2_ESC,    LT1_SPC, OS_3
   ),
 
   [1] = LAYOUT(
@@ -78,6 +83,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_F11, KC_F12,  KC_TRNS, KC_TRNS, KC_TRNS,        KC_LEFT, KC_DOWN, KC_UP,   KC_RIGHT, KC_TRNS,
     RESET,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,        KC_F14,  KC_F15,  KC_VOLD, KC_VOLU,  KC_TRNS,
                               KC_TRNS, KC_SLEP,        KC_TRNS, KC_TRNS
+  ),
+
+  [4] = LAYOUT(
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,        KC_BTN1, KC_BTN2, KC_TRNS, KC_TRNS, KC_TRNS,
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,        KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R, KC_TRNS,
+    C_LEFT,  C_DOWN,  C_UP,    C_RIGHT, KC_TRNS,        KC_WH_U, KC_WH_D, KC_TRNS, KC_TRNS, KC_TRNS,
+                               KC_TRNS, KC_TRNS,        KC_TRNS, KC_TRNS
   )
 };
 

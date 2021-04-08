@@ -3,6 +3,10 @@
 // ctrl
 #define CTRL_S LCTL_T(KC_S)
 #define CTRL_L RCTL_T(KC_L)
+#define C_L C(KC_LEFT)
+#define C_D C(KC_DOWN)
+#define C_U C(KC_UP)
+#define C_R C(KC_RIGHT)
 // alt
 #define ALT_D LALT_T(KC_D)
 #define ALT_K RALT_T(KC_K)
@@ -15,6 +19,8 @@
 // layers
 #define OS_SFT OSM(MOD_LSFT)
 #define OS_3 OSL(3)
+#define OS_4 OSL(4)
+#define OS_5 OSL(5)
 #define LT1_SPC LT(1,KC_SPC)
 #define LT2_ESC LT(2,KC_ESC)
 
@@ -23,7 +29,7 @@ const uint16_t PROGMEM combo_bspc[] = {GUI_J, ALT_K, COMBO_END};
 const uint16_t PROGMEM combo_del[] = {KC_M, KC_COMM, COMBO_END};
 const uint16_t PROGMEM combo_ent[] = {GUI_F, ALT_D, COMBO_END};
 const uint16_t PROGMEM combo_tab[] = {KC_C, KC_V, COMBO_END};
-const uint16_t PROGMEM combo_ctrlR[] = {GUI_F, KC_R, COMBO_END};
+const uint16_t PROGMEM combo_ctrlR[] = {GUI_F, KC_DLR, COMBO_END};
 const uint16_t PROGMEM combo_ctrlV[] = {GUI_F, KC_V, COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
@@ -41,7 +47,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_Q,   KC_W,    KC_E,     KC_R,    KC_T,           KC_Y,    KC_U,   KC_I,    KC_O,   KC_P,
     SFT_A,  CTRL_S,  ALT_D,    GUI_F,   KC_G,           KC_H,    GUI_J,  ALT_K,   CTRL_L, SFT_SCLN,
     KC_Z,   KC_X,    KC_C,     KC_V,    KC_B,           KC_N,    KC_M,   KC_COMM, KC_DOT, KC_SLSH,
-                     KC_LGUI,  OS_SFT, LT2_ESC,        LT1_SPC, OS_3, DF(4)
+                     OS_SFT,   OS_4,    LT2_ESC,        LT1_SPC, OS_3,   KC_GRV
   ),
 
   [1] = LAYOUT_split_3x5_3(
@@ -65,10 +71,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
             RGB_TOG, RGB_MODE_FORWARD, KC_SLEP,        KC_TRNS, KC_TRNS, KC_TRNS
   ),
 
-  [4] = LAYOUT_split_3x5_3( \
-    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,\
-    KC_A,  KC_S,  KC_D,  KC_F,  KC_NO,                KC_NO, KC_J,  KC_K,  KC_L,  KC_SCLN,\
-    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,\
-                  KC_NO, KC_NO, KC_B,                 KC_SPC, KC_NO, DF(0) \
+  [4] = LAYOUT_split_3x5_3(
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,       KC_BTN1, KC_BTN2, KC_TRNS, KC_TRNS, KC_TRNS,
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,       KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R, KC_TRNS,
+    C_L,     C_D,     C_U,     C_R,     KC_TRNS,       KC_WH_U, KC_WH_D, KC_TRNS, KC_TRNS, KC_TRNS,
+                      KC_TRNS, KC_TRNS, KC_TRNS,       KC_TRNS, KC_TRNS, KC_TRNS
   ),
 };
